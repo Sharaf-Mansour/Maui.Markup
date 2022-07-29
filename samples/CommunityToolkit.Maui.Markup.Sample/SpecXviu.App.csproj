@@ -11,10 +11,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
 
     <!-- Display name -->
-    <ApplicationTitle>CommunityToolkit.Maui.Markup.Sample</ApplicationTitle>
+    <ApplicationTitle>SpecXviu</ApplicationTitle>
 
     <!-- App Identifier -->
-    <ApplicationId>com.CommunityToolkit.MarkupSample</ApplicationId>
+    <ApplicationId>com.SpecXviu</ApplicationId>
     <ApplicationIdGuid>BBD0FFD6-2530-47FC-8A89-C12FF625C5BF</ApplicationIdGuid>
 
     <!-- Versions -->
@@ -50,6 +50,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\CommunityToolkit.Maui.Markup\CommunityToolkit.Maui.Markup.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Constants\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\News\" />
   </ItemGroup>
 
 </Project>
