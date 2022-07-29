@@ -9,12 +9,11 @@ class AppShell : Shell
 {
 	readonly static IReadOnlyDictionary<Type, string> pageRouteMappingDictionary = new Dictionary<Type, string>(new[]
 	{
-		CreateRoutePageMapping<NewsPage, NewsViewModel>(),
-		CreateRoutePageMapping<SettingsPage, SettingsViewModel>(),
-		CreateRoutePageMapping<NewsDetailPage, NewsDetailViewModel>(),
+		CreateRoutePageMapping<HomePage, BaseViewModel>(),
+ 
 	});
 
-	public AppShell(NewsPage newsPage)
+	public AppShell(HomePage newsPage)
 	{
 		Items.Add(newsPage);
 	}
@@ -40,21 +39,12 @@ class AppShell : Shell
 
 		static string CreateRoute()
 		{
-			if (typeof(TPage) == typeof(NewsPage))
+			if (typeof(TPage) == typeof(HomePage))
 			{
-				return $"//{nameof(NewsPage)}";
+				return $"//{nameof(HomePage)}";
 			}
 
-			if (typeof(TPage) == typeof(NewsDetailPage))
-			{
-				return $"//{nameof(NewsPage)}/{nameof(NewsDetailPage)}";
-			}
-
-			if (typeof(TPage) == typeof(SettingsPage))
-			{
-				return $"//{nameof(NewsPage)}/{nameof(SettingsPage)}";
-			}
-
+ 
 			throw new NotSupportedException($"{typeof(TPage)} Not Implemented in {nameof(pageRouteMappingDictionary)}");
 		}
 	}
